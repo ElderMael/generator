@@ -45,11 +45,11 @@ export function machine(
      */
 
     const Angular6WebApplication: GeneratorRegistration = {
-        name: "Angular 6 Web Application",
-        intent: "Create an Angular 6 Web Application From A Seed Project",
+        name: "angular-web-app",
+        intent: "Create an Angular Web Application From A Seed Project",
         startingPoint: GitHubRepoRef.from({
             owner: "ElderMael",
-            repo: "angular6-seed",
+            repo: "angular6-webapp",
         }),
         transform: [],
     };
