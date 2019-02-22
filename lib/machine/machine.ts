@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
+import {GitHubRepoRef} from "@atomist/automation-client";
 import {
+    GeneratorRegistration,
     SoftwareDeliveryMachine,
     SoftwareDeliveryMachineConfiguration,
 } from "@atomist/sdm";
@@ -41,6 +43,18 @@ export function machine(
     sdm.
      * and see what the IDE suggests for after the dot
      */
+
+    const Angular6WebApplication: GeneratorRegistration = {
+        name: "Angular 6 Web Application",
+        intent: "Create an Angular 6 Web Application From A Seed Project",
+        startingPoint: GitHubRepoRef.from({
+            owner: "ElderMael",
+            repo: "angular6-seed",
+        }),
+        transform: [],
+    };
+
+    sdm.addGeneratorCommand(Angular6WebApplication);
 
     return sdm;
 }
